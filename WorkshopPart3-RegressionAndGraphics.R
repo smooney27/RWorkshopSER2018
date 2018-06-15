@@ -79,7 +79,6 @@ hist(Duncan$income, main="")
 title("I decide the title, yo!")
 
 # Slide 16
-
 plot(Duncan$income, Duncan$prestige)
 plot(Duncan$income, Duncan$prestige, xlab="Income", ylab="Prestige", xlim=c(0,100))
 
@@ -99,14 +98,21 @@ plot(Duncan$type, Duncan$income)
 class(Duncan$type)
 plot(as.numeric(Duncan$type), Duncan$income)
 
-# Slide 21
+
+# Slide 20: Challenge
+# Use the Duncan dataset to make a box-and-whiskers plot 
+# titled “Income by Job Type” wherein type is on the x 
+# axis, income is on the y axis, and the y axis runs from 0 to 100
+
+
+# Slide 22
 library(ggplot2)
 qplot(Duncan$income, Duncan$prestige)
 
-# Slide 22
+# Slide 23
 ggplot(Duncan) + aes(x=income, y=prestige) + geom_point()
 
-# Slide 23
+# Slide 24
 p <- ggplot(Duncan)
 p <- p + aes(x=income, y=prestige, color=high_education)
 p + geom_point()
@@ -115,6 +121,6 @@ ggplot(Duncan) + aes(x=income, y=prestige,
                      color=high_education) + geom_point()
 
 
-# Slide 25: Challenge
+# Slide 26: Challenge
 # Use ggplot to make a scatterplot of prestige vs. income in the 
 # Duncan dataset, making size proportional to education and color set by type
